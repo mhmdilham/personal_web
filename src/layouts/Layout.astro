@@ -137,13 +137,11 @@ const schemaData = {
     <meta name="theme-color" content="#050F16" />
     <meta name="color-scheme" content="dark" />
 
-    {/* Security Hardening & Content Security Policy (Locked down XSS & Clickjacking) */}
+    {/* Security Hardening & Content Security Policy (Valid W3C meta specification) */}
     <meta 
       http-equiv="Content-Security-Policy" 
-      content="default-src 'self'; script-src 'self' https://send.pageclip.co; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://send.pageclip.co; object-src 'none'; base-uri 'self'; form-action 'self' https://send.pageclip.co; frame-ancestors 'none';" 
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://send.pageclip.co; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://send.pageclip.co; object-src 'none'; base-uri 'self'; form-action 'self' https://send.pageclip.co;" 
     />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="DENY" />
 
     {/* Canonical URL */}
     <link rel="canonical" href={canonicalUrl} />
@@ -202,8 +200,26 @@ const schemaData = {
       <slot />
     </div>
 
-    {/* Pageclip JavaScript SDK (Loaded deferred, non-render-blocking, zero inline execution) */}
-    <script src="/pageclip.js" defer></script>
+    {/* Pageclip JavaScript SDK (Loaded on idle for 0ms initial main-thread blocking) */}
+    <script is:inline>
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          const s = document.createElement('script');
+          s.src = '/pageclip.js';
+          s.defer = true;
+          document.body.appendChild(s);
+        }, { timeout: 3000 });
+      } else {
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            const s = document.createElement('script');
+            s.src = '/pageclip.js';
+            s.defer = true;
+            document.body.appendChild(s);
+          }, 1200);
+        });
+      }
+    </script>
   </body>
 </html>
 

@@ -1,3 +1,3 @@
-Contact: mailto:muhammadilham8353@gmail.com
+Contact: https://mhmdilham.web.id/#kontak
 Preferred-Languages: id, en
 Canonical: https://mhmdilham.web.id/.well-known/security.txt

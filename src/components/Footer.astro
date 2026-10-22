@@ -1,0 +1,78 @@
+---
+// ============================================================================
+// Footer.astro (Taste Skill Editorial Version)
+// Penutup struktural dengan kontras tinggi (Orange & Black field).
+// ============================================================================
+
+const currentYear = new Date().getFullYear();
+
+const socials = [
+  { label: "GITHUB", href: "https://github.com/mhmdilham" },
+  { label: "LINKEDIN", href: "https://www.linkedin.com/in/in-mhmdilham" },
+  { label: "EMAIL", href: "mailto:muhammadilham8353@gmail.com" },
+];
+---
+
+<footer id="kontak" class="bg-brand-dark pt-20 pb-12 scroll-mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    
+    <!-- Bagian Aksi Kontak (Hero Card Kontak) -->
+    <div class="p-8 sm:p-14 bg-brand-surface border-l-4 border-brand-orange mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-8">
+          <div class="font-mono text-xs text-brand-orange uppercase tracking-widest mb-3">
+            // HUBUNGI SAYA
+          </div>
+          <h2 class="font-headline text-3xl sm:text-5xl text-white uppercase leading-[0.92]">
+            SEDANG MENCARI MAHASISWA MAGANG DENGAN KETEKUNAN TINGGI?
+          </h2>
+          <p class="mt-4 text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+            Saya selalu terbuka untuk diskusi seputar Web & Mobile Development, peluang kerja sama proyek, maupun tawaran program magang.
+          </p>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
+          <a 
+            href="mailto:muhammadilham8353@gmail.com"
+            class="px-6 py-4 text-xs font-subheadline font-bold bg-brand-orange text-brand-dark hover:bg-brand-orange-hover transition-colors text-center tracking-wider"
+          >
+            KIRIM EMAIL SEKARANG ↗
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/in-mhmdilham" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-6 py-4 text-xs font-subheadline font-bold bg-brand-dark text-slate-200 hover:text-white border border-brand-border text-center tracking-wider"
+          >
+            PROFIL LINKEDIN ↗
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiet Single Line Footer (Taste Skill Blueprint) -->
+    <div class="pt-8 border-t border-brand-border flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-brand-muted">
+      <div class="flex items-center gap-2">
+        <span>© {currentYear} MUHAMMAD ILHAM.</span>
+        <span>•</span>
+        <span>INFORMATIKA FST UNIVERSITAS TEKNOLOGI YOGYAKARTA</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        {socials.map((link) => (
+          <a 
+            href={link.href} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="hover:text-brand-orange transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</footer>

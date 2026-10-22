@@ -1,0 +1,65 @@
+---
+// ============================================================================
+// Skills.astro (Taste Skill Editorial Version)
+// Kumpulan keahlian teknis nyata tanpa persentase angka fiktif.
+// ============================================================================
+
+const skillSets = [
+  {
+    category: "WEB DEVELOPMENT",
+    skills: ["HTML5", "CSS3", "TAILWIND CSS", "JAVASCRIPT", "ASTRO", "CODEIGNITER / PHP"]
+  },
+  {
+    category: "MOBILE & PROTOTYPING",
+    skills: ["FLUTTER (DASAR)", "DART", "FIGMA WIREFRAMING", "RESPONSIVE LAYOUT"]
+  },
+  {
+    category: "INFRASTRUKTUR JARINGAN (NILAI UNIK)",
+    skills: ["INSTALASI KLIEN (RUMAH/HOTEL)", "FIBER OPTIC CABLING", "DISTRIBUSI ODP / ODC", "TROUBLESHOOTING LAPANGAN", "TOPOLOGI LAN/WAN"]
+  },
+  {
+    category: "PERALATAN KERJA & WORKFLOW",
+    skills: ["GIT & GITHUB", "VS CODE", "TERMINAL / BASH", "POSTMAN"]
+  }
+];
+---
+
+<section id="keahlian" class="py-20 border-b border-brand-border scroll-mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-brand-border">
+      <div>
+        <div class="font-mono text-xs text-brand-orange uppercase tracking-widest mb-2">
+          // 05. INSTRUMEN TEKNIS
+        </div>
+        <h2 class="font-headline text-3xl sm:text-5xl text-white tracking-tight uppercase">
+          KEAHLIAN & ALAT KERJA
+        </h2>
+      </div>
+      <p class="text-sm font-mono text-brand-muted max-w-md">
+        Perpaduan keterampilan kode perangkat lunak dan keahlian instalasi fisik jaringan.
+      </p>
+    </div>
+
+    <!-- Grid Keahlian -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {skillSets.map((set) => (
+        <div class="p-6 sm:p-8 bg-brand-surface">
+          <h3 class="font-headline text-xl text-white pb-3 mb-6 border-b border-brand-border flex items-center justify-between">
+            <span>{set.category}</span>
+            <span class="w-1.5 h-1.5 bg-brand-orange"></span>
+          </h3>
+
+          <div class="flex flex-wrap gap-2">
+            {set.skills.map((skill) => (
+              <span class="px-3 py-1.5 text-xs font-mono bg-brand-dark text-slate-200 border border-brand-border/60 hover:border-brand-orange transition-colors">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

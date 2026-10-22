@@ -1,0 +1,48 @@
+---
+// ============================================================================
+// Layout.astro
+// Master Layout mengikuti arahan resmi Taste Skill: "The Pinned Poster"
+// Tipografi utama: Archivo Variable (Narrow & Heavy Display + Normal Body)
+// Palet: Deep Blue-Black (#050F16) & Hot Signal Orange (#FF7A1F)
+// ============================================================================
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "MUHAMMAD ILHAM — INFORMATIKA UTY // WEB & MOBILE // FIBER ROOTS",
+  description = "Personal website & portofolio teknis Muhammad Ilham. Mahasiswa Informatika UTY penjurusan Web & Mobile dengan latar belakang lapangan fiber optic Gmedia."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Google Font: Archivo (Variable Width & Weight) sesuai Taste Skill Sheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-brand-dark text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-brand-orange selection:text-brand-dark">
+    <!-- Grid Teknis Halus (Taste Skill: Architecture of the ground) -->
+    <div class="fixed inset-0 industrial-grid pointer-events-none z-0 opacity-80"></div>
+    
+    <!-- Konten Utama Halaman -->
+    <div class="relative z-10 flex flex-col min-h-screen">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/global.css";
+</style>

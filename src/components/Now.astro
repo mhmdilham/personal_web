@@ -1,0 +1,68 @@
+---
+// ============================================================================
+// Now.astro (Taste Skill Editorial Version)
+// Status eksplorasi mingguan (Now Page).
+// ============================================================================
+
+const sprints = [
+  {
+    topic: "EKOSISTEM WEB & TAILWIND",
+    status: "AKTIF DIPELAJARI",
+    desc: "Mendalami arsitektur komponen Astro, optimasi CSS modern dengan Tailwind, dan penulisan kode terstruktur tanpa ketergantungan framework berlebih."
+  },
+  {
+    topic: "MOBILE DEVELOPMENT BASICS",
+    status: "SEMESTER INI",
+    desc: "Mempelajari dasar Flutter/Dart untuk memahami siklus hidup aplikasi mobile, manajemen state sederhana, dan integrasi API dasar."
+  },
+  {
+    topic: "PERSIAPAN MAGANG INDUSTRI",
+    status: "TARGET UTAMA",
+    desc: "Membangun 2 proyek berorientasi studi kasus nyata dan mengasah pemahaman problem-solving teknis untuk seleksi magang software developer."
+  }
+];
+---
+
+<section id="fokus" class="py-20 border-b border-brand-border scroll-mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+      <div class="lg:col-span-6">
+        <div class="font-mono text-xs text-brand-orange uppercase tracking-widest mb-2">
+          // 04. STATUS PEMBELAJARAN
+        </div>
+        <h2 class="font-headline text-3xl sm:text-5xl text-white uppercase leading-[0.92]">
+          FOKUS & EKSPLORASI SAAT INI
+        </h2>
+      </div>
+      <div class="lg:col-span-6 flex items-center lg:justify-end">
+        <div class="font-mono text-xs text-brand-muted">
+          STATUS // AKTIF DIPERBARUI SECARA BERKALA
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Kolom Sederhana & Tegas -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {sprints.map((item) => (
+        <div class="p-6 bg-brand-surface border-t-2 border-brand-orange flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-2 py-0.5 text-[10px] font-mono bg-brand-dark text-brand-orange mb-4">
+              {item.status}
+            </span>
+            <h3 class="font-headline text-xl text-white">
+              {item.topic}
+            </h3>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-border/60 text-[11px] font-mono text-brand-muted">
+            Update Rutin
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

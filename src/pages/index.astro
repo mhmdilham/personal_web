@@ -1,0 +1,51 @@
+---
+// ============================================================================
+// index.astro
+// Halaman Utama (Homepage)
+// Di Astro, file di dalam folder src/pages/ otomatis menjadi rute web.
+// (index.astro = URL root "/").
+// ============================================================================
+
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Experience from '../components/Experience.astro';
+import Now from '../components/Now.astro';
+import Skills from '../components/Skills.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!-- Membungkus seluruh halaman dengan Master Layout -->
+<Layout 
+  title="Muhammad Ilham — Mahasiswa Informatika UTY | Web & Mobile Developer"
+  description="Personal website dan portofolio teknis Muhammad Ilham. Mahasiswa Informatika UTY konsentrasi Web & Mobile dengan latar belakang teknisi jaringan di Gmedia Jogja."
+>
+  <!-- 1. Navigasi Atas -->
+  <Navbar />
+
+  <!-- 2. Konten Utama -->
+  <main class="flex-grow">
+    <!-- Hero Section (Penyambutan & Tagline) -->
+    <Hero />
+
+    <!-- About Me (Kisah dari SMK & Lapangan Gmedia ke Kuliah UTY) -->
+    <About />
+
+    <!-- Projects (Karya & Tugas Kuliah yang Dipoles) -->
+    <Projects />
+
+    <!-- Experience (Linimasa PKL Gmedia, SMK Saptosari, dan Kuliah UTY) -->
+    <Experience />
+
+    <!-- Now Section (Apa yang Sedang Aktif Dipelajari) -->
+    <Now />
+
+    <!-- Skills (Kelompok Kemampuan Web, Mobile, Jaringan, & Tools) -->
+    <Skills />
+  </main>
+
+  <!-- 3. Footer & Kontak -->
+  <Footer />
+</Layout>

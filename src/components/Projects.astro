@@ -1,0 +1,136 @@
+---
+// ============================================================================
+// Projects.astro (Taste Skill Editorial Version)
+// Tampilan proyek berbasis data nyata, pemecahan masalah riil, dan tanpa border generik.
+// ============================================================================
+
+interface Project {
+  id: string;
+  title: string;
+  discipline: string;
+  summary: string;
+  problem: string;
+  stack: string[];
+  repoUrl?: string;
+  demoUrl?: string;
+}
+
+const projects: Project[] = [
+  {
+    id: "01",
+    title: "PORTAL TRACKER TUGAS & AKADEMIK MAHASISWA",
+    discipline: "WEB DEV // TUGAS KULIAH",
+    summary: "Sistem web responsif untuk memantau jadwal kuliah praktikum, tenggat waktu penugasan, dan evaluasi capaian semester.",
+    problem: "Mengatasi masalah umum mahasiswa yang kerap kehilangan prioritas tugas karena informasi jadwal tercecer di berbagai grup chat.",
+    stack: ["HTML5", "TAILWIND CSS", "JAVASCRIPT", "LOCAL STORAGE"],
+    repoUrl: "https://github.com/mhmdilham",
+    demoUrl: "#"
+  },
+  {
+    id: "02",
+    title: "MOBILE CAMPUS COMPANION PROTOTYPE",
+    discipline: "MOBILE DEV // PENJURUSAN",
+    summary: "Rancangan antarmuka aplikasi mobile cepat untuk akses denah gedung kuliah, ketersediaan lab praktikum, dan pengumuman jurusan.",
+    problem: "Memotong hierarki navigasi yang lambat agar mahasiswa bisa menemukan ruang kelas ujian hanya dalam 2 ketukan layar.",
+    stack: ["MOBILE UI", "FIGMA", "FLUTTER BASICS", "RESPONSIVE"],
+    repoUrl: "https://github.com/mhmdilham"
+  },
+  {
+    id: "03",
+    title: "PERSONAL HUB & PERFORMANCE ARCHITECTURE",
+    discipline: "ASTRO // WEB PORTAL",
+    summary: "Situs web personal berperforma maksimal dengan konsep zero-bloat, desain editorial terkurasi, dan pemahaman infrastruktur.",
+    problem: "Membangun identitas portofolio mahasiswa Informatika yang mandiri tanpa bergantung pada template pasaran.",
+    stack: ["ASTRO", "TAILWIND CSS", "TYPESCRIPT", "STATIC CDN"],
+    repoUrl: "https://github.com/mhmdilham",
+    demoUrl: "#"
+  }
+];
+---
+
+<section id="proyek" class="py-20 border-b border-brand-border scroll-mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-brand-border">
+      <div>
+        <div class="font-mono text-xs text-brand-orange uppercase tracking-widest mb-2">
+          // 01. INDEX KARYA & SOLUSI
+        </div>
+        <h2 class="font-headline text-3xl sm:text-5xl text-white tracking-tight uppercase">
+          PROYEK TERPILIH
+        </h2>
+      </div>
+      <p class="text-sm font-mono text-brand-muted max-w-md">
+        Berfokus pada pemecahan masalah nyata dengan kode yang efisien dan struktur antarmuka yang lugas.
+      </p>
+    </div>
+
+    <!-- Daftar Proyek Gaya Editorial (Industrial Rows / Panels) -->
+    <div class="space-y-6">
+      {projects.map((item) => (
+        <div class="p-6 sm:p-8 bg-brand-surface hover:bg-brand-surface2 transition-colors border-l-4 border-brand-orange group">
+          <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            
+            <!-- Info Proyek -->
+            <div class="max-w-2xl">
+              <div class="flex items-center gap-3 mb-2 font-mono text-xs text-brand-orange">
+                <span>{item.id}</span>
+                <span class="text-slate-600">/</span>
+                <span>{item.discipline}</span>
+              </div>
+
+              <h3 class="font-headline text-2xl sm:text-3xl text-white group-hover:text-brand-orange transition-colors">
+                {item.title}
+              </h3>
+
+              <p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+                {item.summary}
+              </p>
+
+              <!-- Problem Solved Callout -->
+              <div class="mt-4 p-3 bg-brand-dark/80 text-xs font-mono text-slate-400 border-l border-brand-border">
+                <span class="text-brand-orange font-bold uppercase block mb-1">Masalah yang Diselesaikan:</span>
+                {item.problem}
+              </div>
+            </div>
+
+            <!-- Stack & Link Aksi -->
+            <div class="lg:w-72 flex flex-col justify-between shrink-0">
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                {item.stack.map((tag) => (
+                  <span class="px-2 py-1 text-[11px] font-mono bg-brand-dark text-slate-300">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div class="flex items-center gap-4 text-xs font-subheadline font-bold">
+                {item.repoUrl && (
+                  <a 
+                    href={item.repoUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="text-slate-300 hover:text-white transition-colors uppercase tracking-wider"
+                  >
+                    REPOSITORY ↗
+                  </a>
+                )}
+                {item.demoUrl && (
+                  <a 
+                    href={item.demoUrl} 
+                    class="text-brand-orange hover:underline uppercase tracking-wider"
+                  >
+                    LIVE PREVIEW →
+                  </a>
+                )}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

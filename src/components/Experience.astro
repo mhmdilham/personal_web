@@ -1,0 +1,117 @@
+---
+// ============================================================================
+// Experience.astro (Taste Skill Editorial Version)
+// Rekam jejak terstruktur dengan format Industrial Log Sheet.
+// ============================================================================
+
+interface LogEntry {
+  index: string;
+  period: string;
+  role: string;
+  organization: string;
+  location: string;
+  scope: string;
+  bullets: string[];
+}
+
+const logEntries: LogEntry[] = [
+  {
+    index: "LOG // 01",
+    period: "2023 — SEKARANG",
+    role: "MAHASISWA S1 INFORMATIKA (WEB & MOBILE)",
+    organization: "UNIVERSITAS TEKNOLOGI YOGYAKARTA",
+    location: "YOGYAKARTA",
+    scope: "Rekayasa perangkat lunak, perancangan web responsif, dan dasar-dasar mobile.",
+    bullets: [
+      "Mengambil konsentrasi Web & Mobile Development untuk fokus pada perancangan aplikasi fungsional.",
+      "Mengembangkan proyek portofolio mandiri dengan arsitektur kode modern dan performa tinggi.",
+      "Mempersiapkan diri menghadapi program magang industri software engineering."
+    ]
+  },
+  {
+    index: "LOG // 02",
+    period: "MASA SMK",
+    role: "TEKNISI JARINGAN (PRAKTIK KERJA LAPANGAN)",
+    organization: "GMEDIA (PT MEDIA SARANA DATA)",
+    location: "YOGYAKARTA",
+    scope: "Instalasi jaringan pelanggan (residensial, kafe, hotel), penarikan jalur baru, serta pemeliharaan konektivitas fiber optic.",
+    bullets: [
+      "Fokus utama pada instalasi perangkat dan penarikan kabel koneksi internet baru langsung di lokasi pelanggan (perumahan, kafe, hingga perhotelan).",
+      "Melakukan troubleshooting lapangan untuk memastikan kestabilan konektivitas dan kenyamanan akses pengguna akhir.",
+      "Terlibat dalam pemeliharaan berkala pada titik distribusi jaringan (ODP/ODC) serta pendampingan inspeksi di area BTS.",
+      "Melatih fleksibilitas kerja lapangan, problem solving cepat di tempat, dan disiplin standar keselamatan kerja."
+    ]
+  },
+  {
+    index: "LOG // 03",
+    period: "ALMAMATER",
+    role: "TEKNIK KOMPUTER & JARINGAN (TKJ)",
+    organization: "SMK N 1 SAPTOSARI",
+    location: "GUNUNGKIDUL, DIY",
+    scope: "Fondasi teknik komputer, logika pemrograman awal, dan praktikum laboratorium jaringan.",
+    bullets: [
+      "Jurusan Teknik Komputer & Jaringan: mempelajari topologi LAN, instalasi sistem operasi, dan konfigurasi perangkat keras.",
+      "Mewakili sekolah dalam ajang perlombaan teknis antarsekolah, melatih ketenangan memecahkan masalah dalam batas waktu ketat."
+    ]
+  }
+];
+---
+
+<section id="pengalaman" class="py-20 border-b border-brand-border scroll-mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-brand-border">
+      <div>
+        <div class="font-mono text-xs text-brand-orange uppercase tracking-widest mb-2">
+          // 03. REKAM JEJAK
+        </div>
+        <h2 class="font-headline text-3xl sm:text-5xl text-white tracking-tight uppercase">
+          RIWAYAT & LAPANGAN
+        </h2>
+      </div>
+      <p class="text-sm font-mono text-brand-muted max-w-md">
+        Bukti disiplin kerja fisik dan ketekunan akademik yang membentuk mentalitas penyelesaian masalah.
+      </p>
+    </div>
+
+    <!-- Log Entries Grid / Stack -->
+    <div class="divide-y divide-brand-border">
+      {logEntries.map((log) => (
+        <div class="py-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
+          
+          <!-- Kolom Metadata Kiri -->
+          <div class="lg:col-span-4 font-mono">
+            <span class="text-xs text-brand-orange font-bold block mb-1">{log.index}</span>
+            <div class="text-sm text-slate-400">{log.period}</div>
+            <div class="text-xs text-brand-muted mt-2">{log.location}</div>
+          </div>
+
+          <!-- Kolom Konten Kanan -->
+          <div class="lg:col-span-8">
+            <h3 class="font-headline text-2xl text-white group-hover:text-brand-orange transition-colors">
+              {log.role}
+            </h3>
+            <div class="font-subheadline text-xs tracking-wider text-brand-muted mt-1 uppercase">
+              {log.organization}
+            </div>
+
+            <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed">
+              {log.scope}
+            </p>
+
+            <ul class="mt-4 space-y-2 text-xs sm:text-sm text-slate-400 font-mono">
+              {log.bullets.map((bullet) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="text-brand-orange">▹</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

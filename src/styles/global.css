@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+    --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+    --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+    --step-head: clamp(2.5rem, 1.2rem + 5vw, 5.5rem);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: #050F16;
+  }
+
+  body {
+    @apply bg-brand-dark text-slate-200 antialiased;
+    font-family: 'Archivo', system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: #FF7A1F;
+    color: #050F16;
+  }
+}
+
+/* Taste Skill: Archivo Display Condensed Headline */
+.font-headline {
+  font-family: 'Archivo', sans-serif;
+  font-variation-settings: 'wdth' 65, 'wght' 850;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  line-height: 0.92;
+}
+
+.font-subheadline {
+  font-family: 'Archivo', sans-serif;
+  font-variation-settings: 'wdth' 75, 'wght' 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Industrial Grid lines */
+.industrial-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}

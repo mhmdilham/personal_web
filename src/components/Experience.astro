@@ -7,6 +7,8 @@
 interface LogEntry {
   index: string;
   period: string;
+  startDate: string;
+  endDate?: string;
   role: string;
   organization: string;
   location: string;
@@ -18,6 +20,8 @@ const logEntries: LogEntry[] = [
   {
     index: "LOG // 01",
     period: "2023 — SEKARANG",
+    startDate: "2023-09",
+    endDate: "2026",
     role: "MAHASISWA S1 INFORMATIKA (WEB & MOBILE)",
     organization: "UNIVERSITAS TEKNOLOGI YOGYAKARTA",
     location: "YOGYAKARTA",
@@ -30,7 +34,9 @@ const logEntries: LogEntry[] = [
   },
   {
     index: "LOG // 02",
-    period: "MASA SMK",
+    period: "2022 (PKL SMK)",
+    startDate: "2022-01",
+    endDate: "2022-06",
     role: "TEKNISI JARINGAN (PRAKTIK KERJA LAPANGAN)",
     organization: "GMEDIA (PT MEDIA SARANA DATA)",
     location: "YOGYAKARTA",
@@ -44,7 +50,9 @@ const logEntries: LogEntry[] = [
   },
   {
     index: "LOG // 03",
-    period: "ALMAMATER",
+    period: "2020 — 2023 (ALMAMATER)",
+    startDate: "2020-07",
+    endDate: "2023-06",
     role: "TEKNIK KOMPUTER & JARINGAN (TKJ)",
     organization: "SMK N 1 SAPTOSARI",
     location: "GUNUNGKIDUL, DIY",
@@ -82,7 +90,15 @@ const logEntries: LogEntry[] = [
           <!-- Kolom Metadata Kiri -->
           <div class="lg:col-span-4 font-mono">
             <span class="text-xs text-brand-orange font-bold block mb-1">{log.index}</span>
-            <div class="text-sm text-slate-400">{log.period}</div>
+            <div class="text-sm text-slate-300">
+              <time datetime={log.startDate}>{log.period.split(" ")[0]}</time>
+              {log.endDate ? (
+                <span> — <time datetime={log.endDate}>{log.period.includes("SEKARANG") ? "SEKARANG" : log.period.split(" ")[2]}</time></span>
+              ) : null}
+              {log.period.includes("(") && (
+                <span class="text-xs text-brand-muted block mt-0.5">{log.period.substring(log.period.indexOf("("))}</span>
+              )}
+            </div>
             <div class="text-xs text-brand-muted mt-2">{log.location}</div>
           </div>
 

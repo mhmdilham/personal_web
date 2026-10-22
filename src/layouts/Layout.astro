@@ -6,6 +6,8 @@
 // Palet: Deep Blue-Black (#050F16) & Hot Signal Orange (#FF7A1F)
 // ============================================================================
 
+import '@fontsource-variable/archivo/standard.css';
+
 interface Props {
   title?: string;
   description?: string;
@@ -26,15 +28,6 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
-
-    <!-- Google Font: Archivo (Optimized Non-Blocking) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" />
-    </noscript>
   </head>
   <body class="bg-brand-dark text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-brand-orange selection:text-brand-dark">
     <!-- Grid Teknis Halus (Taste Skill: Architecture of the ground) -->

@@ -17,8 +17,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Archivo"', 'system-ui', 'sans-serif'],
-        display: ['"Archivo"', 'system-ui', 'sans-serif'],
+        sans: ['"Archivo Variable"', '"Archivo"', 'system-ui', 'sans-serif'],
+        display: ['"Archivo Variable"', '"Archivo"', 'system-ui', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       }
     },

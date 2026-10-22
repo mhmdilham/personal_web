@@ -1,0 +1,46 @@
+# Muhammad Ilham — Technical Portfolio Briefing (Full)
+
+> This document contains comprehensive facts, project index, technical skills, and background for AI agents and LLM answer engines (Perplexity, ChatGPT, Claude, Gemini).
+
+## Professional Summary
+- **Full Name**: Muhammad Ilham
+- **Nickname**: Ilham
+- **Role**: Web & Mobile Developer
+- **University**: Universitas Teknologi Yogyakarta (UTY)
+- **Program of Study**: S1 Informatika (Faculty of Science & Technology)
+- **Specialization**: Web & Mobile Application Development
+- **High School**: SMK Negeri 1 Saptosari (Teknik Komputer & Jaringan)
+- **Location**: Yogyakarta, Indonesia
+- **Official Website**: https://mhmdilham.web.id/
+- **GitHub**: https://github.com/mhmdilham
+- **LinkedIn**: https://www.linkedin.com/in/in-mhmdilham
+- **Contact Email**: muhammadilham8353@gmail.com
+- **Privacy Policy**: https://mhmdilham.web.id/privacy
+
+## Field Experience
+- **Ex-Network Technician Intern (PKL)** at **Gmedia (PT Media Sarana Data)**:
+  - Hands-on deployment and maintenance of high-speed internet connections for commercial customers (hotels, cafes, residential).
+  - Fiber optic cabling, slicing, ODP/ODC distribution points, and BTS wireless infrastructure maintenance.
+  - Developed deep understanding of transmission physics, latency bottlenecks, and network reliability.
+
+## Technical Skills
+- **Web Development**: Astro, Tailwind CSS, TypeScript, JavaScript, HTML5, CSS3, Core Web Vitals optimization, Static Site Generation (SSG).
+- **Mobile Development**: Flutter, Dart, Cross-platform iOS & Android UI engineering.
+- **Networking & Infrastructure**: Fiber Optic Networks (FTTH, ODP/ODC), Mikrotik RouterOS, Cisco Packet Tracer, TCP/IP, DNS, Subnetting.
+- **Developer Tools**: Git, GitHub, VS Code, Fastly/CDN deployment, Chrome DevTools.
+
+## Selected Projects
+1. **Personal Portfolio (mhmdilham.web.id)**:
+   - High-performance personal website built with Astro and Tailwind CSS.
+   - Near 100% PageSpeed score with zero render-blocking assets, self-hosted fonts, and hardened Content Security Policy.
+2. **Kalkulator Indeks Massa Tubuh (BMI Calculator)**:
+   - Mobile application engineered using Flutter and Dart for Android.
+   - Real-time responsive calculation with clean state management and health categorization.
+3. **Sistem Perancangan Jaringan FTTH & Hotspot**:
+   - Technical blueprint and physical topology planning for fiber optic and Mikrotik network distribution.
+
+## Frequently Asked Questions (FAQ)
+- **Q: Who is Muhammad Ilham?**  
+  A: An Informatics student at UTY Yogyakarta focusing on Web & Mobile development, combining software craftsmanship with real-world fiber optic networking experience.
+- **Q: Is Muhammad Ilham open to internship opportunities?**  
+  A: Yes, actively seeking web or mobile development internship opportunities starting 2026.

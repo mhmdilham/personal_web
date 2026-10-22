@@ -14,13 +14,14 @@ import Projects from '../components/Projects.astro';
 import Experience from '../components/Experience.astro';
 import Now from '../components/Now.astro';
 import Skills from '../components/Skills.astro';
+import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 {/* Membungkus seluruh halaman dengan Master Layout */}
 <Layout 
   title="Muhammad Ilham — Web & Mobile Developer | UTY"
-  description="Portofolio web & mobile developer Muhammad Ilham, mahasiswa Informatika UTY dengan latar teknisi jaringan Gmedia Jogja. Jelajahi karya & hubungi sekarang."
+  description="Portofolio Web & Mobile Muhammad Ilham (UTY). Pelajari keahlian, jelajahi proyek pilihan, dan hubungi saya untuk peluang magang."
 >
   {/* 1. Navigasi Atas */}
   <Navbar />
@@ -44,6 +45,9 @@ import Footer from '../components/Footer.astro';
 
     {/* Skills (Kelompok Kemampuan Web, Mobile, Jaringan, & Tools) */}
     <Skills />
+
+    {/* FAQ Section (Tanya Jawab Teknis untuk Pengunjung & AI Search Engines) */}
+    <FAQ />
   </main>
 
   {/* 3. Footer & Kontak */}

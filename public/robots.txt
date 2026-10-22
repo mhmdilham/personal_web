@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mhmdilham.web.id/sitemap.xml
+# AI Agent Briefings
+# https://mhmdilham.web.id/llms.txt
+# https://mhmdilham.web.id/llms-full.txt

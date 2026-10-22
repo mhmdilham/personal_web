@@ -68,7 +68,57 @@ const schemaData = {
       },
       "inLanguage": "id-ID",
       "datePublished": "2026-10-16T10:00:00+07:00",
-      "dateModified": "2026-10-22T16:30:00+07:00"
+      "dateModified": "2026-10-22T17:40:00+07:00"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": siteUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Siapa Muhammad Ilham dan apa fokus keahlian utamanya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Muhammad Ilham adalah mahasiswa S1 Informatika di Universitas Teknologi Yogyakarta (UTY) dengan fokus penjurusan Web & Mobile Development. Fondasi teknisnya berakar dari SMK N 1 Saptosari (Teknik Komputer & Jaringan) serta pengalaman praktik kerja lapangan di Gmedia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana latar belakang teknisi fiber optic memperkuat rekayasa perangkat lunak?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pengalaman instalasi dan penanganan jaringan internet lapangan di Gmedia memberikan perspektif infrastruktur fisik yang nyata. Pemahaman tentang latensi, paket transmisi, dan keterbatasan bandwidth diterjemahkan ke dalam penulisan kode antarmuka digital yang berbobot ringan, cepat dimuat, dan hemat sumber daya."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa saja teknologi utama yang digunakan dalam pengembangan aplikasi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Untuk Web Development, teknologi utama mencakup Astro, Tailwind CSS, TypeScript/JavaScript, dan HTML5 semantik dengan skor performa PageSpeed maksimal. Untuk Mobile Development, fokus pada pengembangan cross-platform menggunakan Flutter dan Dart."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah Muhammad Ilham terbuka untuk kesempatan magang (internship) atau kolaborasi proyek?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya. Saat ini Muhammad Ilham aktif membuka diri untuk kesempatan magang industri di bidang Web Development atau Mobile Development, serta terbuka untuk diskusi proyek teknis yang menuntut kedisiplinan dan keandalan sistem."
+          }
+        }
+      ]
     }
   ]
 };
@@ -87,9 +137,13 @@ const schemaData = {
     <meta name="theme-color" content="#050F16" />
     <meta name="color-scheme" content="dark" />
 
-    {/* Security Hardening & Content Security Policy */}
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://send.pageclip.co; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://send.pageclip.co;" />
+    {/* Security Hardening & Content Security Policy (Locked down XSS & Clickjacking) */}
+    <meta 
+      http-equiv="Content-Security-Policy" 
+      content="default-src 'self'; script-src 'self' https://send.pageclip.co; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://send.pageclip.co; object-src 'none'; base-uri 'self'; form-action 'self' https://send.pageclip.co; frame-ancestors 'none';" 
+    />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
 
     {/* Canonical URL */}
     <link rel="canonical" href={canonicalUrl} />
@@ -131,12 +185,14 @@ const schemaData = {
     />
   </head>
   <body class="bg-brand-dark text-slate-100 min-h-screen min-h-[100dvh] relative overflow-x-hidden selection:bg-brand-orange selection:text-brand-dark">
-    {/* Aksesibilitas: Skip-to-content link untuk pengguna keyboard / screen reader */}
+    {/* Aksesibilitas: Skip-to-content link untuk pengguna keyboard & screen reader (Standar WCAG / Scanner) */}
     <a 
+      id="skip-link"
       href="#main-content" 
-      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-orange focus:text-brand-dark focus:font-bold focus:text-xs focus:tracking-wider focus:uppercase focus:outline-none focus:ring-2 focus:ring-white"
+      aria-label="Skip to main content / Lewati ke konten utama"
+      class="skip-link sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-orange focus:text-brand-dark focus:font-bold focus:text-xs focus:tracking-wider focus:uppercase focus:outline-none focus:ring-2 focus:ring-white"
     >
-      Lewati ke Konten Utama ↓
+      Skip to content / Lewati ke Konten Utama ↓
     </a>
     {/* Grid Teknis Halus (Taste Skill: Architecture of the ground) */}
     <div class="fixed inset-0 industrial-grid pointer-events-none z-0 opacity-80"></div>
@@ -146,26 +202,8 @@ const schemaData = {
       <slot />
     </div>
 
-    {/* Pageclip JavaScript SDK (Loaded on idle for 0ms initial main-thread blocking) */}
-    <script is:inline>
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => {
-          const s = document.createElement('script');
-          s.src = '/pageclip.js';
-          s.defer = true;
-          document.body.appendChild(s);
-        }, { timeout: 2000 });
-      } else {
-        window.addEventListener('load', () => {
-          setTimeout(() => {
-            const s = document.createElement('script');
-            s.src = '/pageclip.js';
-            s.defer = true;
-            document.body.appendChild(s);
-          }, 800);
-        });
-      }
-    </script>
+    {/* Pageclip JavaScript SDK (Loaded deferred, non-render-blocking, zero inline execution) */}
+    <script src="/pageclip.js" defer></script>
   </body>
 </html>
 

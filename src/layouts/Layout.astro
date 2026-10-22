@@ -27,9 +27,10 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
 
-    <!-- Google Font: Archivo (Optimized Non-Blocking) -->
+    <!-- Google Font: Archivo (Optimized Non-Blocking & Preloaded) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLmvDIaI.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" media="print" onload="this.media='all'" />
     <noscript>
@@ -45,8 +46,26 @@ const {
       <slot />
     </div>
 
-    <!-- Pageclip JavaScript SDK (Local Fastly CDN Edge & Deferred) -->
-    <script src="/pageclip.js" charset="utf-8" defer></script>
+    <!-- Pageclip JavaScript SDK (Loaded on idle for 0ms initial main-thread blocking) -->
+    <script is:inline>
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          const s = document.createElement('script');
+          s.src = '/pageclip.js';
+          s.defer = true;
+          document.body.appendChild(s);
+        }, { timeout: 2000 });
+      } else {
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            const s = document.createElement('script');
+            s.src = '/pageclip.js';
+            s.defer = true;
+            document.body.appendChild(s);
+          }, 800);
+        });
+      }
+    </script>
   </body>
 </html>
 

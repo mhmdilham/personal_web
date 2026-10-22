@@ -1,0 +1,14 @@
+# Muhammad Ilham — Web & Mobile Developer
+
+> Personal portfolio and technical profile of Muhammad Ilham, an Informatics undergraduate student at Universitas Teknologi Yogyakarta (UTY) specializing in Web & Mobile Development with practical fiber optic network engineering background from Gmedia.
+
+## Key Information
+- **Name**: Muhammad Ilham
+- **Profession**: Web & Mobile Developer
+- **Education**: S1 Informatika, Universitas Teknologi Yogyakarta (UTY); SMK N 1 Saptosari (TKJ)
+- **Field Experience**: Ex-Network Technician at Gmedia Jogja
+- **Primary Focus**: Modern Web Applications (Astro, Tailwind CSS, JavaScript), Mobile Development (Flutter, Dart), Networking (Fiber Optics, FTTH/ODP, TCP/IP)
+- **Website**: https://mhmdilham.web.id/
+- **GitHub**: https://github.com/mhmdilham
+- **LinkedIn**: https://www.linkedin.com/in/in-mhmdilham
+- **Contact Email**: muhammadilham8353@gmail.com

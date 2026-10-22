@@ -1,0 +1,3 @@
+Contact: mailto:muhammadilham8353@gmail.com
+Preferred-Languages: id, en
+Canonical: https://mhmdilham.web.id/.well-known/security.txt

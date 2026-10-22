@@ -17,6 +17,59 @@ const {
   title = "MUHAMMAD ILHAM — INFORMATIKA UTY // WEB & MOBILE // FIBER ROOTS",
   description = "Personal website & portofolio teknis Muhammad Ilham. Mahasiswa Informatika UTY penjurusan Web & Mobile dengan latar belakang lapangan fiber optic Gmedia."
 } = Astro.props;
+
+const siteUrl = "https://mhmdilham.web.id";
+const canonicalUrl = `${siteUrl}/`;
+const ogImage = `${siteUrl}/og-image.png`;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      "name": "Muhammad Ilham",
+      "url": siteUrl,
+      "jobTitle": "Web & Mobile Developer",
+      "description": description,
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Universitas Teknologi Yogyakarta"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "SMK Negeri 1 Saptosari"
+        }
+      ],
+      "knowsAbout": [
+        "Web Development",
+        "Mobile Application Development",
+        "Astro",
+        "Tailwind CSS",
+        "Flutter",
+        "Dart",
+        "Fiber Optic Networks",
+        "Computer Network Engineering"
+      ],
+      "sameAs": [
+        "https://github.com/mhmdilham",
+        "https://www.linkedin.com/in/in-mhmdilham"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Muhammad Ilham — Web & Mobile Developer",
+      "description": description,
+      "publisher": {
+        "@id": `${siteUrl}/#person`
+      },
+      "inLanguage": "id-ID"
+    }
+  ]
+};
 ---
 
 <!doctype html>
@@ -24,10 +77,43 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Muhammad Ilham" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#050F16" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Muhammad Ilham" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Muhammad Ilham — Mahasiswa Informatika UTY | Web & Mobile Developer" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Structured Data JSON-LD (Schema.org for SEO & AI Answer Engines) -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
 
     <!-- Preload Critical Self-Hosted Font to eliminate Network Chain and Layout Shift (CLS) -->
     <link 
@@ -39,6 +125,13 @@ const {
     />
   </head>
   <body class="bg-brand-dark text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-brand-orange selection:text-brand-dark">
+    <!-- Aksesibilitas: Skip-to-content link untuk pengguna keyboard / screen reader -->
+    <a 
+      href="#main-content" 
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-orange focus:text-brand-dark focus:font-bold focus:text-xs focus:tracking-wider focus:uppercase focus:outline-none focus:ring-2 focus:ring-white"
+    >
+      Lewati ke Konten Utama ↓
+    </a>
     <!-- Grid Teknis Halus (Taste Skill: Architecture of the ground) -->
     <div class="fixed inset-0 industrial-grid pointer-events-none z-0 opacity-80"></div>
     

@@ -82,12 +82,12 @@ const logEntries: LogEntry[] = [
       </p>
     </div>
 
-    <!-- Log Entries Grid / Stack -->
+    {/* Log Entries Grid / Stack */}
     <div class="divide-y divide-brand-border">
       {logEntries.map((log) => (
         <div class="py-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
           
-          <!-- Kolom Metadata Kiri -->
+          {/* Kolom Metadata Kiri */}
           <div class="lg:col-span-4 font-mono">
             <span class="text-xs text-brand-orange font-bold block mb-1">{log.index}</span>
             <div class="text-sm text-slate-300">
@@ -102,7 +102,7 @@ const logEntries: LogEntry[] = [
             <div class="text-xs text-brand-muted mt-2">{log.location}</div>
           </div>
 
-          <!-- Kolom Konten Kanan -->
+          {/* Kolom Konten Kanan */}
           <div class="lg:col-span-8">
             <h3 class="font-headline text-2xl text-white group-hover:text-brand-orange transition-colors">
               {log.role}

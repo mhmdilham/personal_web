@@ -19,7 +19,7 @@ const {
 } = Astro.props;
 
 const siteUrl = "https://mhmdilham.web.id";
-const canonicalUrl = `${siteUrl}/`;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImage = `${siteUrl}/og-image.png`;
 
 const schemaData = {
@@ -87,15 +87,19 @@ const schemaData = {
     <meta name="theme-color" content="#050F16" />
     <meta name="color-scheme" content="dark" />
 
-    <!-- Canonical URL -->
+    {/* Security Hardening & Content Security Policy */}
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://send.pageclip.co; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://send.pageclip.co;" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    {/* Canonical URL */}
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Favicon & Touch Icons -->
+    {/* Favicon & Touch Icons */}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Open Graph / Facebook -->
+    {/* Open Graph / Facebook */}
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
@@ -107,17 +111,17 @@ const schemaData = {
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Muhammad Ilham — Mahasiswa Informatika UTY | Web & Mobile Developer" />
 
-    <!-- Twitter / X Cards -->
+    {/* Twitter / X Cards */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <!-- Structured Data JSON-LD (Schema.org for SEO & AI Answer Engines) -->
+    {/* Structured Data JSON-LD (Schema.org for SEO & AI Answer Engines) */}
     <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
 
-    <!-- Preload Critical Self-Hosted Font to eliminate Network Chain and Layout Shift (CLS) -->
+    {/* Preload Critical Self-Hosted Font to eliminate Network Chain and Layout Shift (CLS) */}
     <link 
       rel="preload" 
       href="/_astro/archivo-latin-standard-normal.DY7AcnAa.woff2" 
@@ -126,23 +130,23 @@ const schemaData = {
       crossorigin 
     />
   </head>
-  <body class="bg-brand-dark text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-brand-orange selection:text-brand-dark">
-    <!-- Aksesibilitas: Skip-to-content link untuk pengguna keyboard / screen reader -->
+  <body class="bg-brand-dark text-slate-100 min-h-screen min-h-[100dvh] relative overflow-x-hidden selection:bg-brand-orange selection:text-brand-dark">
+    {/* Aksesibilitas: Skip-to-content link untuk pengguna keyboard / screen reader */}
     <a 
       href="#main-content" 
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-orange focus:text-brand-dark focus:font-bold focus:text-xs focus:tracking-wider focus:uppercase focus:outline-none focus:ring-2 focus:ring-white"
     >
       Lewati ke Konten Utama ↓
     </a>
-    <!-- Grid Teknis Halus (Taste Skill: Architecture of the ground) -->
+    {/* Grid Teknis Halus (Taste Skill: Architecture of the ground) */}
     <div class="fixed inset-0 industrial-grid pointer-events-none z-0 opacity-80"></div>
     
-    <!-- Konten Utama Halaman -->
-    <div class="relative z-10 flex flex-col min-h-screen">
+    {/* Konten Utama Halaman */}
+    <div class="relative z-10 flex flex-col min-h-screen min-h-[100dvh]">
       <slot />
     </div>
 
-    <!-- Pageclip JavaScript SDK (Loaded on idle for 0ms initial main-thread blocking) -->
+    {/* Pageclip JavaScript SDK (Loaded on idle for 0ms initial main-thread blocking) */}
     <script is:inline>
       if ('requestIdleCallback' in window) {
         requestIdleCallback(() => {

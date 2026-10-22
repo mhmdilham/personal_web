@@ -16,11 +16,11 @@ const socials = [
 <footer id="kontak" class="bg-brand-dark pt-20 pb-12 scroll-mt-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-8">
     
-    <!-- Bagian Aksi Kontak (Hero Card Kontak & Form Pageclip) -->
+    {/* Bagian Aksi Kontak (Hero Card Kontak & Form Pageclip) */}
     <div class="p-5 sm:p-10 lg:p-12 bg-brand-surface border-l-4 border-brand-orange mb-12 sm:mb-16">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
         
-        <!-- Kolom Kiri: Teks & Info Langsung -->
+        {/* Kolom Kiri: Teks & Info Langsung */}
         <div class="lg:col-span-5 flex flex-col justify-between h-full">
           <div>
             <div class="font-mono text-xs text-brand-orange uppercase tracking-widest mb-3">
@@ -50,13 +50,15 @@ const socials = [
           </div>
         </div>
 
-        <!-- Kolom Kanan: Form Kontak Terhubung ke Pageclip -->
+        {/* Kolom Kanan: Form Kontak Terhubung ke Pageclip */}
         <div class="lg:col-span-7 bg-brand-dark/70 p-5 sm:p-8 border border-brand-border">
           <form 
             action="https://send.pageclip.co/UB2BBLZwSbdqCBF3G1WEynkdv2TxsFD6/contact_me" 
             class="pageclip-form space-y-4" 
             method="post"
           >
+            <div id="contact-form-status" role="status" aria-live="polite" class="sr-only"></div>
+
             <div>
               <label for="name" class="block font-mono text-[11px] text-slate-300 uppercase tracking-wider mb-1.5">
                 NAMA LENGKAP / INSTANSI <span class="text-brand-orange">*</span>
@@ -67,6 +69,7 @@ const socials = [
                 name="name" 
                 autocomplete="name"
                 required 
+                aria-required="true"
                 placeholder="Nama Anda atau Perusahaan" 
                 class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange transition-colors"
               />
@@ -82,6 +85,7 @@ const socials = [
                 name="email" 
                 autocomplete="email"
                 required 
+                aria-required="true"
                 placeholder="email@domain.com" 
                 class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange transition-colors"
               />
@@ -96,6 +100,7 @@ const socials = [
                 name="message" 
                 rows="4" 
                 required 
+                aria-required="true"
                 placeholder="Tuliskan pesan, penawaran magang, atau diskusi proyek Anda di sini..." 
                 class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange transition-colors resize-none"
               ></textarea>
@@ -108,11 +113,11 @@ const socials = [
               <span>KIRIM PESAN LANGSUNG ↗</span>
             </button>
 
-            <!-- Kebijakan Privasi Data Formulir (Data Tracking & Privacy Compliance) -->
+            {/* Kebijakan Privasi Data Formulir (Data Tracking & Privacy Compliance) */}
             <div class="pt-2">
               <p class="font-mono text-[11px] text-slate-400 flex items-center gap-1.5">
                 <span class="text-brand-orange">🔒</span>
-                <span>Data yang Anda kirimkan terenkripsi dan hanya digunakan untuk keperluan komunikasi profesional.</span>
+                <span>Data yang Anda kirimkan terenkripsi dan hanya digunakan untuk keperluan komunikasi profesional. Baca <a href="/privacy" class="text-brand-orange underline underline-offset-2 hover:text-white transition-colors">Kebijakan Privasi</a>.</span>
               </p>
             </div>
           </form>
@@ -121,7 +126,7 @@ const socials = [
       </div>
     </div>
 
-    <!-- Quiet Single Line Footer (Responsif Mobile & Desktop) -->
+    {/* Quiet Single Line Footer (Responsif Mobile & Desktop) */}
     <div class="pt-8 border-t border-brand-border flex flex-col md:flex-row items-center justify-between gap-5 font-mono text-xs text-brand-muted text-center md:text-left">
       <div class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 leading-relaxed">
         <span class="text-slate-300">© {currentYear} MUHAMMAD ILHAM.</span>
@@ -130,6 +135,9 @@ const socials = [
       </div>
 
       <div class="flex items-center justify-center gap-6 tracking-wider">
+        <a href="/privacy" class="hover:text-brand-orange transition-colors py-1">
+          PRIVASI
+        </a>
         {socials.map((link) => (
           <a 
             href={link.href} 

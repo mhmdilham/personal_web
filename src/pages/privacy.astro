@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Kebijakan Privasi | Muhammad Ilham — Web & Mobile Developer"
+  description="Kebijakan privasi dan transparansi pengelolaan data pengunjung pada situs mhmdilham.web.id."
+>
+  <Navbar />
+
+  <main id="main-content" class="flex-grow py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-8">
+      
+      {/* Breadcrumb Navigation */}
+      <nav aria-label="Breadcrumb" class="mb-8 font-mono text-xs text-brand-muted flex items-center gap-2">
+        <a href="/" class="hover:text-brand-orange transition-colors">BERANDA</a>
+        <span>/</span>
+        <span class="text-brand-orange">KEBIJAKAN PRIVASI</span>
+      </nav>
+
+      {/* Header Dokumen */}
+      <header class="border-b border-brand-border pb-8 mb-12">
+        <div class="font-mono text-xs text-brand-orange uppercase tracking-widest mb-3">
+          // TRANSPARANSI & INTEGRITAS DATA
+        </div>
+        <h1 class="font-headline text-3xl sm:text-5xl text-white uppercase leading-[0.95]">
+          KEBIJAKAN PRIVASI
+        </h1>
+        <p class="mt-4 font-mono text-xs text-slate-400">
+          TERAKHIR DIPERBARUI: <time datetime="2026-10-22">22 OKTOBER 2026</time>
+        </p>
+      </header>
+
+      {/* Isi Kebijakan Privasi */}
+      <article class="space-y-10 text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
+        
+        <section class="space-y-3">
+          <h2 class="font-headline text-xl text-white uppercase tracking-wide flex items-center gap-2">
+            <span class="text-brand-orange">01.</span> PENDAHULUAN
+          </h2>
+          <p>
+            Privasi Anda adalah prioritas utama. Website portofolio pribadi ini (<strong class="text-white">mhmdilham.web.id</strong>) dirancang dengan prinsip minimasi data: kami tidak menggunakan pelacak iklan pihak ketiga, tidak memasang cookie analitik invasif, dan tidak menjual data pribadi kepada siapa pun.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="font-headline text-xl text-white uppercase tracking-wide flex items-center gap-2">
+            <span class="text-brand-orange">02.</span> DATA YANG DIKUMPULKAN
+          </h2>
+          <p>
+            Kami hanya mengumpulkan data yang Anda berikan secara sukarela melalui formulir kontak di website ini, yang mencakup:
+          </p>
+          <ul class="list-none space-y-2 pl-4 font-mono text-xs sm:text-sm text-slate-400">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-orange">▹</span>
+              <span><strong>Nama Lengkap / Instansi:</strong> Untuk menyapa dan mengidentifikasi pengirim pesan.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-orange">▹</span>
+              <span><strong>Alamat Email:</strong> Untuk keperluan korespondensi dan membalas pesan Anda.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-orange">▹</span>
+              <span><strong>Pesan / Tawaran:</strong> Detail proyek, pertanyaan, atau tawaran magang yang Anda sampaikan.</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="font-headline text-xl text-white uppercase tracking-wide flex items-center gap-2">
+            <span class="text-brand-orange">03.</span> PENGELOLAAN & PENYIMPANAN DATA
+          </h2>
+          <p>
+            Formulir kontak pada situs ini diproses secara aman menggunakan layanan backend pihak ketiga terpercaya (<strong class="text-white">Pageclip</strong>) melalui koneksi terenkripsi HTTPS/TLS standar industri. Data yang masuk disimpan secara privat dan hanya dapat diakses oleh Muhammad Ilham.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="font-headline text-xl text-white uppercase tracking-wide flex items-center gap-2">
+            <span class="text-brand-orange">04.</span> HAK PENGGUNA ATAS DATA
+          </h2>
+          <p>
+            Anda memiliki hak penuh untuk meminta penghapusan riwayat korespondensi atau data kontak Anda dari database kami kapan saja. Cukup kirimkan permintaan melalui email ke:
+          </p>
+          <div class="p-4 bg-brand-surface border-l-2 border-brand-orange font-mono text-xs sm:text-sm text-white">
+            EMAIL: <a href="mailto:muhammadilham8353@gmail.com" class="text-brand-orange hover:underline">muhammadilham8353@gmail.com</a>
+          </div>
+        </section>
+
+      </article>
+
+      {/* Tombol Kembali */}
+      <div class="mt-14 pt-8 border-t border-brand-border">
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-2 px-6 py-3 text-xs font-subheadline font-bold bg-brand-surface border border-brand-border text-white hover:border-brand-orange hover:text-brand-orange transition-colors uppercase tracking-wider"
+        >
+          <span>← KEMBALI KE BERANDA</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

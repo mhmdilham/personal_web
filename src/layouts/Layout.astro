@@ -28,6 +28,15 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <!-- Preload Critical Self-Hosted Font to eliminate Network Chain and Layout Shift (CLS) -->
+    <link 
+      rel="preload" 
+      href="/_astro/archivo-latin-standard-normal.DY7AcnAa.woff2" 
+      as="font" 
+      type="font/woff2" 
+      crossorigin 
+    />
   </head>
   <body class="bg-brand-dark text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-brand-orange selection:text-brand-dark">
     <!-- Grid Teknis Halus (Taste Skill: Architecture of the ground) -->

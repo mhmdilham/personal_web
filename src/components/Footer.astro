@@ -16,37 +16,96 @@ const socials = [
 <footer id="kontak" class="bg-brand-dark pt-20 pb-12 scroll-mt-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-8">
     
-    <!-- Bagian Aksi Kontak (Hero Card Kontak) -->
-    <div class="p-8 sm:p-14 bg-brand-surface border-l-4 border-brand-orange mb-16">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <!-- Bagian Aksi Kontak (Hero Card Kontak & Form Pageclip) -->
+    <div class="p-8 sm:p-12 bg-brand-surface border-l-4 border-brand-orange mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
-        <div class="lg:col-span-8">
-          <div class="font-mono text-xs text-brand-orange uppercase tracking-widest mb-3">
-            // HUBUNGI SAYA
+        <!-- Kolom Kiri: Teks & Info Langsung -->
+        <div class="lg:col-span-5 flex flex-col justify-between h-full">
+          <div>
+            <div class="font-mono text-xs text-brand-orange uppercase tracking-widest mb-3">
+              // HUBUNGI SAYA
+            </div>
+            <h2 class="font-headline text-3xl sm:text-4xl text-white uppercase leading-[0.95]">
+              SEDANG MENCARI TALENTA DENGAN KETEKUNAN TINGGI?
+            </h2>
+            <p class="mt-4 text-sm text-slate-300 leading-relaxed">
+              Saya selalu terbuka untuk diskusi seputar Web & Mobile Development, peluang kerja sama proyek, maupun tawaran program magang. Silakan kirimkan pesan langsung melalui formulir di samping.
+            </p>
           </div>
-          <h2 class="font-headline text-3xl sm:text-5xl text-white uppercase leading-[0.92]">
-            SEDANG MENCARI MAHASISWA MAGANG DENGAN KETEKUNAN TINGGI?
-          </h2>
-          <p class="mt-4 text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-            Saya selalu terbuka untuk diskusi seputar Web & Mobile Development, peluang kerja sama proyek, maupun tawaran program magang.
-          </p>
+
+          <div class="mt-8 pt-6 border-t border-brand-border/60 space-y-2 font-mono text-xs text-slate-400">
+            <div>
+              <span class="text-brand-orange font-bold">EMAIL LANGSUNG:</span>
+              <a href="mailto:muhammadilham8353@gmail.com" class="ml-2 text-slate-200 hover:text-brand-orange transition-colors underline underline-offset-4">
+                muhammadilham8353@gmail.com
+              </a>
+            </div>
+            <div>
+              <span class="text-brand-orange font-bold">LINKEDIN:</span>
+              <a href="https://www.linkedin.com/in/in-mhmdilham" target="_blank" rel="noopener noreferrer" class="ml-2 text-slate-200 hover:text-brand-orange transition-colors">
+                in/in-mhmdilham ↗
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-          <a 
-            href="mailto:muhammadilham8353@gmail.com"
-            class="px-6 py-4 text-xs font-subheadline font-bold bg-brand-orange text-brand-dark hover:bg-brand-orange-hover transition-colors text-center tracking-wider"
+        <!-- Kolom Kanan: Form Kontak Terhubung ke Pageclip -->
+        <div class="lg:col-span-7 bg-brand-dark/60 p-6 sm:p-8 border border-brand-border">
+          <form 
+            action="https://send.pageclip.co/UB2BBLZwSbdqCBF3G1WEynkdv2TxsFD6" 
+            class="pageclip-form space-y-4" 
+            method="post"
           >
-            KIRIM EMAIL SEKARANG ↗
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/in-mhmdilham" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="px-6 py-4 text-xs font-subheadline font-bold bg-brand-dark text-slate-200 hover:text-white border border-brand-border text-center tracking-wider"
-          >
-            PROFIL LINKEDIN ↗
-          </a>
+            <div>
+              <label for="name" class="block font-mono text-[11px] text-slate-300 uppercase tracking-wider mb-1.5">
+                NAMA LENGKAP / INSTANSI <span class="text-brand-orange">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                placeholder="Nama Anda atau Perusahaan" 
+                class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block font-mono text-[11px] text-slate-300 uppercase tracking-wider mb-1.5">
+                ALAMAT EMAIL <span class="text-brand-orange">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                placeholder="email@domain.com" 
+                class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block font-mono text-[11px] text-slate-300 uppercase tracking-wider mb-1.5">
+                PESAN / TAWARAN <span class="text-brand-orange">*</span>
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4" 
+                required 
+                placeholder="Tuliskan pesan, penawaran magang, atau diskusi proyek Anda di sini..." 
+                class="w-full bg-brand-surface border border-brand-border px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              class="pageclip-form__submit pageclip-form__submit--dark-loader w-full sm:w-auto px-8 py-3.5 text-xs font-subheadline font-bold bg-brand-orange text-brand-dark hover:bg-brand-orange-hover transition-colors tracking-wider uppercase cursor-pointer"
+            >
+              <span>KIRIM PESAN LANGSUNG ↗</span>
+            </button>
+          </form>
         </div>
 
       </div>
@@ -76,3 +135,21 @@ const socials = [
 
   </div>
 </footer>
+
+<style is:global>
+  /* Kustomisasi tampilan feedback sukses Pageclip untuk tema gelap */
+  .pageclip-form__success {
+    background: rgba(10, 24, 34, 0.95) !important;
+    border: 1px solid #FF7A1F !important;
+    color: #ffffff !important;
+    padding: 2rem;
+  }
+  .pageclip-form__success__message {
+    font-family: 'Archivo', sans-serif !important;
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em;
+    text-transform: uppercase !important;
+    color: #FF7A1F !important;
+  }
+</style>

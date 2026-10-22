@@ -17,8 +17,8 @@ const socials = [
   <div class="max-w-7xl mx-auto px-4 sm:px-8">
     
     <!-- Bagian Aksi Kontak (Hero Card Kontak & Form Pageclip) -->
-    <div class="p-8 sm:p-12 bg-brand-surface border-l-4 border-brand-orange mb-16">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+    <div class="p-5 sm:p-10 lg:p-12 bg-brand-surface border-l-4 border-brand-orange mb-12 sm:mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
         
         <!-- Kolom Kiri: Teks & Info Langsung -->
         <div class="lg:col-span-5 flex flex-col justify-between h-full">
@@ -26,7 +26,7 @@ const socials = [
             <div class="font-mono text-xs text-brand-orange uppercase tracking-widest mb-3">
               // HUBUNGI SAYA
             </div>
-            <h2 class="font-headline text-3xl sm:text-4xl text-white uppercase leading-[0.95]">
+            <h2 class="font-headline text-2xl sm:text-4xl text-white uppercase leading-[0.95]">
               SEDANG MENCARI TALENTA DENGAN KETEKUNAN TINGGI?
             </h2>
             <p class="mt-4 text-sm text-slate-300 leading-relaxed">
@@ -34,10 +34,10 @@ const socials = [
             </p>
           </div>
 
-          <div class="mt-8 pt-6 border-t border-brand-border/60 space-y-2 font-mono text-xs text-slate-400">
+          <div class="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-brand-border/60 space-y-2 font-mono text-xs text-slate-400">
             <div>
               <span class="text-brand-orange font-bold">EMAIL LANGSUNG:</span>
-              <a href="mailto:muhammadilham8353@gmail.com" class="ml-2 text-slate-200 hover:text-brand-orange transition-colors underline underline-offset-4">
+              <a href="mailto:muhammadilham8353@gmail.com" class="ml-2 text-slate-200 hover:text-brand-orange transition-colors underline underline-offset-4 break-all">
                 muhammadilham8353@gmail.com
               </a>
             </div>
@@ -51,7 +51,7 @@ const socials = [
         </div>
 
         <!-- Kolom Kanan: Form Kontak Terhubung ke Pageclip -->
-        <div class="lg:col-span-7 bg-brand-dark/60 p-6 sm:p-8 border border-brand-border">
+        <div class="lg:col-span-7 bg-brand-dark/70 p-5 sm:p-8 border border-brand-border">
           <form 
             action="https://send.pageclip.co/UB2BBLZwSbdqCBF3G1WEynkdv2TxsFD6" 
             class="pageclip-form space-y-4" 
@@ -113,21 +113,21 @@ const socials = [
       </div>
     </div>
 
-    <!-- Quiet Single Line Footer (Taste Skill Blueprint) -->
-    <div class="pt-8 border-t border-brand-border flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-brand-muted">
-      <div class="flex items-center gap-2">
-        <span>© {currentYear} MUHAMMAD ILHAM.</span>
-        <span>•</span>
-        <span>INFORMATIKA FST UNIVERSITAS TEKNOLOGI YOGYAKARTA</span>
+    <!-- Quiet Single Line Footer (Responsif Mobile & Desktop) -->
+    <div class="pt-8 border-t border-brand-border flex flex-col md:flex-row items-center justify-between gap-5 font-mono text-xs text-brand-muted text-center md:text-left">
+      <div class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 leading-relaxed">
+        <span class="text-slate-300">© {currentYear} MUHAMMAD ILHAM.</span>
+        <span class="hidden sm:inline text-brand-muted">•</span>
+        <span class="text-[11px] sm:text-xs text-slate-400">INFORMATIKA FST UNIVERSITAS TEKNOLOGI YOGYAKARTA</span>
       </div>
 
-      <div class="flex items-center gap-6">
+      <div class="flex items-center justify-center gap-6 tracking-wider">
         {socials.map((link) => (
           <a 
             href={link.href} 
             target="_blank" 
             rel="noopener noreferrer"
-            class="hover:text-brand-orange transition-colors"
+            class="hover:text-brand-orange transition-colors py-1"
           >
             {link.label}
           </a>

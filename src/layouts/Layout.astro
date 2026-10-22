@@ -139,10 +139,10 @@ const schemaData = {
     <meta name="theme-color" content="#050F16" />
     <meta name="color-scheme" content="dark" />
 
-    {/* Security Hardening & Content Security Policy (Strict script-src without unsafe-inline) */}
+    {/* Security Hardening & Content Security Policy (Allows Pageclip & Cloudflare Insights Analytics) */}
     <meta 
       http-equiv="Content-Security-Policy" 
-      content="default-src 'self'; script-src 'self' https://send.pageclip.co; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://send.pageclip.co; object-src 'none'; base-uri 'self'; form-action 'self' https://send.pageclip.co;" 
+      content="default-src 'self'; script-src 'self' https://send.pageclip.co https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://send.pageclip.co https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self' https://send.pageclip.co;" 
     />
 
     {/* Canonical URL */}

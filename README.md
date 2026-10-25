@@ -57,9 +57,3 @@ Situs ini dibangun dengan pendekatan minimalis, performa instan (*near-instant l
 - **Privacy Policy (`/privacy`)**: Kebijakan privasi penanganan data formulir kontak.
 
 ---
-
-## 🔒 Hak Cipta & Kepemilikan
-
-© 2026 **Muhammad Ilham**. Seluruh hak cipta dilindungi (*All Rights Reserved*).
-
-Seluruh materi di dalam repositori ini—termasuk kode sumber, desain, tata letak, konten teks, identitas merek, dan media—merupakan hak milik pribadi Muhammad Ilham. Tidak diperkenankan untuk menyalin, mengkloning, mendistribusikan ulang, atau memanfaatkan bagian mana pun dari situs ini tanpa izin tertulis.

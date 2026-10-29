@@ -52,7 +52,6 @@ Situs ini dibangun dengan pendekatan minimalis, performa instan (*near-instant l
 - **Projects**: Showcase proyek web dan aplikasi mobile yang telah dikembangkan.
 - **Skills**: Rincian teknologi, bahasa pemrograman, dan tools yang dikuasai.
 - **Now (`/now`)**: Fokus dan hal yang sedang dipelajari atau dikerjakan saat ini.
-- **FAQ**: Jawaban atas pertanyaan umum seputar kolaborasi atau pengerjaan proyek.
 - **Contact Form**: Formulir pesan langsung ke inbox pribadi yang aman dan terlindungi dari bot.
 - **Privacy Policy (`/privacy`)**: Kebijakan privasi penanganan data formulir kontak.
 

@@ -40,9 +40,3 @@
    - Real-time responsive calculation with clean state management and health categorization.
 3. **Sistem Perancangan Jaringan FTTH & Hotspot**:
    - Technical blueprint and physical topology planning for fiber optic and Mikrotik network distribution.
-
-## Frequently Asked Questions (FAQ)
-- **Q: Who is Muhammad Ilham?**  
-  A: An Informatics student at UTY Yogyakarta focusing on Web & Mobile development, combining software craftsmanship with real-world fiber optic networking experience.
-- **Q: Is Muhammad Ilham open to internship opportunities?**  
-  A: Yes, actively seeking web or mobile development internship opportunities starting 2026.

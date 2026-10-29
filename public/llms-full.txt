@@ -32,11 +32,11 @@
 - **Developer Tools**: Git, GitHub, VS Code, Fastly/CDN deployment, Chrome DevTools.
 
 ## Selected Projects
-1. **Personal Portfolio (mhmdilham.web.id)**:
+1. **Clash of Clans Damage Calculator (coccalculator.netlify.app)**:
+   - Modern, offline-ready Progressive Web App (PWA) engineered with Svelte 5, TypeScript, Tailwind CSS, and Vite.
+   - Accurately calculates optimal spell combinations (Lightning & Earthquake) and Hero Equipments against defenses (TH 1–18).
+   - Repository: https://github.com/mhmdilham/COC-Damage-Calculator | Live: https://coccalculator.netlify.app
+2. **Personal Portfolio (mhmdilham.me)**:
    - High-performance personal website built with Astro and Tailwind CSS.
    - Near 100% PageSpeed score with zero render-blocking assets, self-hosted fonts, and hardened Content Security Policy.
-2. **Kalkulator Indeks Massa Tubuh (BMI Calculator)**:
-   - Mobile application engineered using Flutter and Dart for Android.
-   - Real-time responsive calculation with clean state management and health categorization.
-3. **Sistem Perancangan Jaringan FTTH & Hotspot**:
-   - Technical blueprint and physical topology planning for fiber optic and Mikrotik network distribution.
+   - Repository: https://github.com/mhmdilham/personal_web

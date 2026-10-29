@@ -17,8 +17,8 @@ const navItems = [
   <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
     
     {/* Identitas / Wordmark */}
-    <a href="#" class="flex items-baseline gap-3 text-white group">
-      <span class="font-headline text-2xl tracking-tighter text-white group-hover:text-brand-orange transition-colors">
+    <a href="#" class="flex items-baseline gap-3 text-white group shrink-0">
+      <span class="font-headline text-xl sm:text-2xl tracking-tighter text-white group-hover:text-brand-orange transition-colors">
         MUHAMMAD ILHAM
       </span>
       <span class="hidden lg:inline font-mono text-xs text-brand-muted uppercase tracking-wider">
@@ -39,7 +39,7 @@ const navItems = [
     </nav>
 
     {/* Status & Tombol Aksi Kontak */}
-    <div class="flex items-center gap-3 sm:gap-4">
+    <div class="flex items-center gap-2 sm:gap-4 shrink-0">
       <div class="hidden lg:flex items-center gap-2 font-mono text-xs text-brand-muted">
         <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
         <span>STATUS: OPEN FOR INTERNSHIP</span>
@@ -49,7 +49,7 @@ const navItems = [
         href="https://github.com/mhmdilham" 
         target="_blank" 
         rel="noopener noreferrer"
-        class="text-slate-400 hover:text-white transition-colors p-1"
+        class="hidden sm:inline-flex text-slate-400 hover:text-white transition-colors p-1"
         aria-label="GitHub @mhmdilham"
         title="GitHub @mhmdilham"
       >
@@ -60,7 +60,7 @@ const navItems = [
         href="https://www.linkedin.com/in/in-mhmdilham" 
         target="_blank" 
         rel="noopener noreferrer"
-        class="text-slate-400 hover:text-white transition-colors p-1"
+        class="hidden sm:inline-flex text-slate-400 hover:text-white transition-colors p-1"
         aria-label="LinkedIn Muhammad Ilham"
         title="LinkedIn Profile"
       >
@@ -69,7 +69,7 @@ const navItems = [
 
       <a 
         href="#kontak" 
-        class="px-4 py-2 text-xs font-subheadline font-bold bg-brand-orange text-brand-dark hover:bg-brand-orange-hover transition-colors"
+        class="px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs font-subheadline font-bold bg-brand-orange text-brand-dark hover:bg-brand-orange-hover transition-colors whitespace-nowrap"
       >
         HUBUNGI ↗
       </a>

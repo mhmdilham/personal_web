@@ -14,11 +14,15 @@
     scroll-behavior: smooth;
     color-scheme: dark;
     background-color: #050F16;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   body {
     @apply bg-brand-dark text-slate-200 antialiased;
     font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   ::selection {

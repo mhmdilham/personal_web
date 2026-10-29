@@ -18,32 +18,23 @@ interface Project {
 const projects: Project[] = [
   {
     id: "01",
-    title: "PORTAL TRACKER TUGAS & AKADEMIK MAHASISWA",
-    discipline: "WEB DEV // TUGAS KULIAH",
-    summary: "Sistem web responsif untuk memantau jadwal kuliah praktikum, tenggat waktu penugasan, dan evaluasi capaian semester.",
-    problem: "Mengatasi masalah umum mahasiswa yang kerap kehilangan prioritas tugas karena informasi jadwal tercecer di berbagai grup chat.",
-    stack: ["HTML5", "TAILWIND CSS", "JAVASCRIPT", "LOCAL STORAGE"],
-    repoUrl: "https://github.com/mhmdilham",
-    demoUrl: "#"
+    title: "CLASH OF CLANS DAMAGE CALCULATOR",
+    discipline: "SVELTE 5 // WEB APP & PWA",
+    summary: "Aplikasi web kalkulator interaktif dan offline-ready untuk menghitung kombinasi optimal spell (Zap & Quake) serta Hero Equipments terhadap gedung pertahanan dan hero di Clash of Clans (TH 1–18).",
+    problem: "Menghilangkan kebutuhan pemain menghitung manual HP pertahanan yang kompleks dan kombinasi spell bertingkat sebelum eksekusi serangan Clan War.",
+    stack: ["SVELTE 5", "TYPESCRIPT", "TAILWIND CSS", "VITE", "PWA"],
+    repoUrl: "https://github.com/mhmdilham/COC-Damage-Calculator",
+    demoUrl: "https://coccalculator.netlify.app"
   },
   {
     id: "02",
-    title: "MOBILE CAMPUS COMPANION PROTOTYPE",
-    discipline: "MOBILE DEV // PENJURUSAN",
-    summary: "Rancangan antarmuka aplikasi mobile cepat untuk akses denah gedung kuliah, ketersediaan lab praktikum, dan pengumuman jurusan.",
-    problem: "Memotong hierarki navigasi yang lambat agar mahasiswa bisa menemukan ruang kelas ujian hanya dalam 2 ketukan layar.",
-    stack: ["MOBILE UI", "FIGMA", "FLUTTER BASICS", "RESPONSIVE"],
-    repoUrl: "https://github.com/mhmdilham"
-  },
-  {
-    id: "03",
     title: "PERSONAL HUB & PERFORMANCE ARCHITECTURE",
     discipline: "ASTRO // WEB PORTAL",
     summary: "Situs web personal berperforma maksimal dengan konsep zero-bloat, desain editorial terkurasi, dan pemahaman infrastruktur.",
     problem: "Membangun identitas portofolio mahasiswa Informatika yang mandiri tanpa bergantung pada template pasaran.",
-    stack: ["ASTRO", "TAILWIND CSS", "TYPESCRIPT", "STATIC CDN"],
-    repoUrl: "https://github.com/mhmdilham",
-    demoUrl: "#"
+    stack: ["ASTRO", "TAILWIND CSS", "TYPESCRIPT", "CLOUDFLARE"],
+    repoUrl: "https://github.com/mhmdilham/personal_web",
+    demoUrl: "https://mhmdilham.me"
   }
 ];
 ---
@@ -119,6 +110,8 @@ const projects: Project[] = [
                 {item.demoUrl && (
                   <a 
                     href={item.demoUrl} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="text-brand-orange hover:underline uppercase tracking-wider"
                   >
                     LIVE PREVIEW →
